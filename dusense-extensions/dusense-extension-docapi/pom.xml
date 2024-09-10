@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.dusense.framework</groupId>
+        <artifactId>dusense-extensions-parent</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>dusense-extension-docapi</artifactId>
+    <name>${project.artifactId}</name>
+<!--    <version>${project.parent.version}</version>-->
+    <packaging>jar</packaging>
+
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version>
+        </dependency>
+        <!-- Cloud-->
+        <dependency>
+            <groupId>net.dusense.framework</groupId>
+            <artifactId>dusense-core-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.dreamlu</groupId>
+            <artifactId>mica-auto</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+    </build>
+
+</project>

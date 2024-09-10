@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.dusense.framework</groupId>
+        <artifactId>dusense-dependencies</artifactId>
+        <version>${revision}</version>
+        <relativePath>./dusense-dependencies/pom.xml</relativePath>
+    </parent>
+
+    <groupId>net.dusense.framework</groupId>
+    <artifactId>dusense-framework</artifactId>
+    <version>${revision}</version>
+    <name>${project.artifactId} pom ${project.version}</name>
+    <packaging>pom</packaging>
+
+    <url>http://maven.apache.org</url>
+
+    <modules>
+        <module>dusense-dependencies</module>
+        <module>dusense-core-common</module>
+        <module>dusense-core-launcher</module>
+        <module>dusense-core-context</module>
+        <module>dusense-core-cloud</module>
+        <module>dusense-core-abmodule</module>
+        <module>dusense-extensions</module>
+        <module>dusense-boot-single</module>
+        <module>dusense-boot-cluster</module>
+
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.dusense.framework</groupId>
+                <artifactId>dusense-dependencies</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <!-- junit5 测试 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

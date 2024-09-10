@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.dusense.framework</groupId>
+        <artifactId>dusense-framework</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>dusense-extensions-parent</artifactId>
+    <name>${project.artifactId} pom ${project.version}</name>
+    <packaging>pom</packaging>
+    <url>http://maven.apache.org</url>
+
+    <modules>
+        <module>dusense-extension-log</module>
+        <module>dusense-extension-docapi</module>
+        <module>dusense-extension-hibernate</module>
+        <module>dusense-extension-transaction</module>
+
+        <module>dusense-extension-msgbus</module>
+
+        <module>dusense-extension-tenant</module>
+        <module>dusense-extension-datapermit</module>
+        <module>dusense-extension-autotest</module>
+
+        <module>dusense-extension-shardingsphere</module>
+        <module>dusense-extension-redis</module>
+        <module>dusense-extension-jcache</module>
+        <module>dusense-extension-apicrypto</module>
+    </modules>
+
+</project>

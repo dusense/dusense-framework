@@ -1,0 +1,44 @@
+#swagger公共信息
+swagger:
+  title: Dusense Framewrok 开放接口文档系统
+  description: Dusense Framewrok 开放接口文档系统
+  license: Powered By Dusense
+  license-url: http://dusense.net
+  terms-of-service-url: http://dusense.net
+  contact:
+    name: dusense-framework
+    email: opensource@dusense.net
+    url: http://www.github.com/dusense
+
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: net.dusense
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  openapi:
+    title: Dusense Framewrok 开放接口文档系统
+    description: "Dusense Framewrok 开放接口文档系统"
+    email: opensource@dusense.net
+    concat: dusense-framework
+    url: http://www.github.com/dusense
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      dusense:
+        group-name: dusense
+        api-rule: package
+        api-rule-resources:
+          - net.dusense

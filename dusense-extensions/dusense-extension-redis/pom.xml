@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.dusense.framework</groupId>
+        <artifactId>dusense-extensions-parent</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>dusense-extension-redis</artifactId>
+    <name>${project.artifactId}</name>
+    <version>${project.parent.version}</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.dusense.framework</groupId>
+            <artifactId>dusense-core-abmodule</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.dusense.framework</groupId>
+            <artifactId>dusense-core-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.dusense.framework</groupId>
+            <artifactId>dusense-extension-jcache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!--Redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- Auto -->
+        <dependency>
+            <groupId>net.dreamlu</groupId>
+            <artifactId>mica-auto</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
