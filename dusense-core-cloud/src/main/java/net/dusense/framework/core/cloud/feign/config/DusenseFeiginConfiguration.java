@@ -10,8 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 
 /**
- *
- * <p>feign 支持 jax-rs标准</p>
+ * feign 支持 jax-rs标准
  *
  * @author [ saily ]
  * @email sailyfirm@gmail.com

@@ -25,25 +25,19 @@ public class ReflectionUtil {
     //        ConvertUtils.register(dc, Date.class);
     //    }
 
-    /**
-     * 调用Getter方法.
-     */
+    /** 调用Getter方法. */
     public static Object invokeGetterMethod(Object target, String propertyName) {
         String getterMethodName = "get" + StringUtils.capitalize(propertyName);
-        return invokeMethod(target, getterMethodName, new Class[]{}, new Object[]{});
+        return invokeMethod(target, getterMethodName, new Class[] {}, new Object[] {});
     }
 
-    /**
-     * 调用Getter方法.
-     */
+    /** 调用Getter方法. */
     public static Object invokeBooleanMethod(Object target, String propertyName) {
         String getterMethodName = "is" + StringUtils.capitalize(propertyName);
-        return invokeMethod(target, getterMethodName, new Class[]{}, new Object[]{});
+        return invokeMethod(target, getterMethodName, new Class[] {}, new Object[] {});
     }
 
-    /**
-     * 调用Setter方法.使用value的Class来查找Setter方法.
-     */
+    /** 调用Setter方法.使用value的Class来查找Setter方法. */
     public static void invokeSetterMethod(Object target, String propertyName, Object value) {
         invokeSetterMethod(target, propertyName, value, null);
     }
@@ -57,12 +51,10 @@ public class ReflectionUtil {
             Object target, String propertyName, Object value, Class<?> propertyType) {
         Class<?> type = propertyType != null ? propertyType : value.getClass();
         String setterMethodName = "set" + StringUtils.capitalize(propertyName);
-        invokeMethod(target, setterMethodName, new Class[]{type}, new Object[]{value});
+        invokeMethod(target, setterMethodName, new Class[] {type}, new Object[] {value});
     }
 
-    /**
-     * 直接设置对象属性值, 无视private/protected修饰符, 不经过setter函数.
-     */
+    /** 直接设置对象属性值, 无视private/protected修饰符, 不经过setter函数. */
     public static void setFieldValue(
             final Object object, final String fieldName, final Object value) {
         Field field = getDeclaredField(object, fieldName);
@@ -81,9 +73,7 @@ public class ReflectionUtil {
         }
     }
 
-    /**
-     * 直接调用对象方法, 无视private/protected修饰符.
-     */
+    /** 直接调用对象方法, 无视private/protected修饰符. */
     public static Object invokeMethod(
             final Object object,
             final String methodName,
@@ -115,8 +105,8 @@ public class ReflectionUtil {
         Assert.notNull(object, "object不能为空");
         Assert.hasText(fieldName, "fieldName");
         for (Class<?> superClass = object.getClass();
-             superClass != Object.class;
-             superClass = superClass.getSuperclass()) {
+                superClass != Object.class;
+                superClass = superClass.getSuperclass()) {
             try {
                 return superClass.getDeclaredField(fieldName);
             } catch (NoSuchFieldException e) {
@@ -150,9 +140,7 @@ public class ReflectionUtil {
         return curClass;
     }
 
-    /**
-     * 强行设置Field可访问.
-     */
+    /** 强行设置Field可访问. */
     protected static void makeAccessible(final Field field) {
         if (!Modifier.isPublic(field.getModifiers())
                 || !Modifier.isPublic(field.getDeclaringClass().getModifiers())) {
@@ -170,8 +158,8 @@ public class ReflectionUtil {
         Assert.notNull(object, "object不能为空");
 
         for (Class<?> superClass = object.getClass();
-             superClass != Object.class;
-             superClass = superClass.getSuperclass()) {
+                superClass != Object.class;
+                superClass = superClass.getSuperclass()) {
             try {
                 return superClass.getDeclaredMethod(methodName, parameterTypes);
             } catch (NoSuchMethodException e) {
@@ -240,9 +228,7 @@ public class ReflectionUtil {
         return (Class) params[index];
     }
 
-    /**
-     * 将反射时的checked exception转换为unchecked exception.
-     */
+    /** 将反射时的checked exception转换为unchecked exception. */
     public static RuntimeException convertReflectionExceptionToUnchecked(Exception e) {
         if (e instanceof IllegalAccessException
                 || e instanceof IllegalArgumentException
@@ -291,8 +277,8 @@ public class ReflectionUtil {
         Assert.notNull(object, "object不能为空");
         Field[] result = null;
         for (Class<?> superClass = object.getClass();
-             superClass != Object.class;
-             superClass = superClass.getSuperclass()) {
+                superClass != Object.class;
+                superClass = superClass.getSuperclass()) {
             try {
                 result = (Field[]) ArrayUtils.addAll(result, superClass.getDeclaredFields());
             } catch (SecurityException e) {

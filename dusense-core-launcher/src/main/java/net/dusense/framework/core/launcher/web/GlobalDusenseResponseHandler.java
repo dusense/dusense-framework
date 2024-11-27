@@ -3,8 +3,8 @@ package net.dusense.framework.core.launcher.web;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import net.dusense.framework.core.context.support.UserContextConstants;
-import net.dusense.framework.core.tool.jackson.JacksonUtils;
 import net.dusense.framework.core.context.util.WebUtil;
+import net.dusense.framework.core.tool.jackson.JacksonUtils;
 import net.dusense.framework.core.web.R;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.core.MethodParameter;
@@ -21,7 +21,7 @@ import java.net.URI;
 import java.util.List;
 
 /**
- * Description: [统一返回 & 区分调用来源]
+ * Description: [mvc 统一返回 & 区分调用来源]
  *
  * @version $Revision$
  * @author:[Fan Yang]
@@ -76,7 +76,7 @@ public class GlobalDusenseResponseHandler implements ResponseBodyAdvice {
             return body;
         } else if (body instanceof ExceptionRespEntity) {
             // 2次包装ExceptionRespEntity
-            return R.error(((ExceptionRespEntity) body).getMsg())
+            return R.fail(((ExceptionRespEntity) body).getMsg())
                     .setStatus(
                             ((ServletServerHttpResponse) response)
                                     .getServletResponse()

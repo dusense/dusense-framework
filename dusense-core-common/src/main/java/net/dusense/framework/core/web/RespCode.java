@@ -31,7 +31,8 @@ public enum RespCode implements IRespCode {
     METHOD_NOT_SUPPORTED(HttpServletResponse.SC_METHOD_NOT_ALLOWED, "当前请求方法不支持"),
 
     /** 不支持当前媒体类型 */
-    MEDIA_TYPE_NOT_SUPPORTED(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE, "415 当前请求ContentType不支持"),
+    MEDIA_TYPE_NOT_SUPPORTED(
+            HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE, "415 当前请求ContentType不支持"),
 
     /** 请求被拒绝 */
     REQ_REJECT(HttpServletResponse.SC_FORBIDDEN, "请求被拒绝"),

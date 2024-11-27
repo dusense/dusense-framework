@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 /**
- * <p>web response 支持类</p>
+ * web response 支持类
  *
  * @author [ saily ]
  * @version V3.0

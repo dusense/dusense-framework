@@ -5,9 +5,9 @@ import net.dusense.framework.core.web.R;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.http.codec.HttpMessageWriter;
-import org.springframework.web.api.Reactive.HandlerResult;
-import org.springframework.web.api.Reactive.accept.RequestedContentTypeResolver;
-import org.springframework.web.api.Reactive.result.method.annotation.ResponseBodyResultHandler;
+import org.springframework.web.reactive.HandlerResult;
+import org.springframework.web.reactive.accept.RequestedContentTypeResolver;
+import org.springframework.web.reactive.result.method.annotation.ResponseBodyResultHandler;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.function.Function;
 
 /**
- * <p>全局响应式返回结果处理</p>
+ * 全局响应式返回结果处理
  *
  * @author [ saily ]
  * @version V3.0

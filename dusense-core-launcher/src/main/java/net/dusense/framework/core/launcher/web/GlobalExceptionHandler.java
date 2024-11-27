@@ -21,6 +21,7 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
 
 import javax.naming.AuthenticationException;
 import javax.naming.NoPermissionException;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -289,9 +290,9 @@ public class GlobalExceptionHandler extends WebResponseSupport {
 
     @ExceptionHandler(
             value = {
-                    RuntimeException.class,
-                    Exception.class,
-                    Throwable.class,
+                RuntimeException.class,
+                Exception.class,
+                Throwable.class,
             })
     @ResponseBody
     public ResponseEntity<ExceptionRespEntity> handleException(Throwable th) {

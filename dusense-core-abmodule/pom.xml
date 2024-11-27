@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>dusense-core-abmodule</artifactId>
-    <name>${project.artifactId}</name>
+    <name>${project.artifactId} ${project.version}</name>
     <packaging>jar</packaging>
 
     <url>http://maven.apache.org</url>

@@ -28,8 +28,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- *
- * <p>区分读写的 json 消息 处理器，父类支持read,当前类新写的逻辑</p>
+ * 区分读写的 json 消息 处理器，父类支持read,当前类新写的逻辑
  *
  * @author [ saily ]
  * @email sailyfirm@gmail.com

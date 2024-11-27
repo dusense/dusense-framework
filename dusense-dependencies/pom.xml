@@ -7,10 +7,45 @@
     <artifactId>dusense-dependencies</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>${project.artifactId}</name>
+    <name>${project.artifactId} ${project.version}</name>
+    <description>This Project is base framework for dusense</description>
+
+    <url>https://github.com/dusense/dusense-framework</url>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/dusense/dusense-framework/issues</url>
+    </issueManagement>
+    <inceptionYear>2020</inceptionYear>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:https://github.com/dusense/dusense-framework.git</connection>
+        <developerConnection>scm:git:git@github.com:dusense/dusense-framework.git</developerConnection>
+        <url>https://github.com/dusense/dusense-framework</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>saily001</id>
+            <name>Saily</name>
+            <email>service@dusense.net</email>
+            <organization>Dusense</organization>
+            <organizationUrl>http://www.dusense.com</organizationUrl>
+            <roles>
+                <role>owner</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
 
     <properties>
-        <revision>4.0</revision>
+        <revision>4.1</revision>
         <spring.boot.version>3.3.1</spring.boot.version>
         <spring.cloud.version>2023.0.3</spring.cloud.version>
         <alibaba.cloud.version>2023.0.1.2</alibaba.cloud.version>
@@ -135,12 +170,12 @@
                 <version>3.1.3</version>
                 <scope>provided</scope>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>com.google.auto.service</groupId>-->
-<!--                <artifactId>auto-service</artifactId>-->
-<!--                <version>1.0.1</version>-->
-<!--                <optional>true</optional>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.google.auto.service</groupId>-->
+            <!--                <artifactId>auto-service</artifactId>-->
+            <!--                <version>1.0.1</version>-->
+            <!--                <optional>true</optional>-->
+            <!--            </dependency>-->
 
             <!-- 单元测试 -->
             <dependency>
@@ -260,11 +295,11 @@
                 <version>3.0.15</version>
             </dependency>
             <!-- captcha -->
-<!--            <dependency>-->
-<!--                <groupId>com.github.whvcse</groupId>-->
-<!--                <artifactId>easy-captcha</artifactId>-->
-<!--                <version>1.6.2</version>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.github.whvcse</groupId>-->
+            <!--                <artifactId>easy-captcha</artifactId>-->
+            <!--                <version>1.6.2</version>-->
+            <!--            </dependency>-->
             <!-- jackson -->
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
@@ -277,11 +312,11 @@
                 <version>${jackson.version}</version>
             </dependency>
             <!-- fastjson -->
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba</groupId>-->
-<!--                <artifactId>fastjson</artifactId>-->
-<!--                <version>1.2.75</version>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.alibaba</groupId>-->
+            <!--                <artifactId>fastjson</artifactId>-->
+            <!--                <version>1.2.75</version>-->
+            <!--            </dependency>-->
             <!-- easyexcel -->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -398,17 +433,16 @@
         </dependencies>
     </dependencyManagement>
 
+
     <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <name>Nexus Release Repository</name>
-            <url>https://mvn.dusense.net/repository/releases/</url>
-        </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>https://mvn.dusense.net/repository/snapshots/</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 
     <build>
@@ -476,12 +510,94 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.6.0</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <publishingServerId>ossrh</publishingServerId>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.3.1</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.11.1</version>
+                    <configuration>
+                        <quiet>true</quiet>
+                        <notimestamp>true</notimestamp>
+                        <encoding>UTF-8</encoding>
+                        <docencoding>UTF-8</docencoding>
+                        <charset>UTF-8</charset>
+                        <additionalOptions>
+                            <additionalOption>-XDignore.symbol.file</additionalOption>
+                            <additionalOption>-Xdoclint:-html</additionalOption>
+                        </additionalOptions>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-docs</id>
+                            <goals><goal>jar</goal></goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

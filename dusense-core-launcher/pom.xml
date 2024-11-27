@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>dusense-core-launcher</artifactId>
-    <name>${project.artifactId}</name>
+    <name>${project.artifactId} ${project.version}</name>
 <!--    <version>${project.parent.version}</version>-->
     <packaging>jar</packaging>
 

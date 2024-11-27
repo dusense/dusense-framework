@@ -19,8 +19,7 @@ import org.springframework.lang.Nullable;
 import java.util.Objects;
 
 /**
- *
- * <p>加密工具类</p>
+ * 加密工具类
  *
  * @author [ saily ]
  * @email sailyfirm@gmail.com

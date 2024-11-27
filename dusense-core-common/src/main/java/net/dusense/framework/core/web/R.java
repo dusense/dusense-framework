@@ -13,9 +13,7 @@ import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.*;
 
-/**
- * 统一API响应结果封装
- */
+/** 统一API响应结果封装 */
 @Accessors(chain = true)
 @Getter
 @Setter
@@ -31,14 +29,10 @@ public class R<T> implements Serializable {
     protected int status;
     private long total;
     private long timestamp;
-    /**
-     * 过滤字段：指定需要序列化的字段
-     */
+    /** 过滤字段：指定需要序列化的字段 */
     private transient Map<Class<?>, Set<String>> includes;
 
-    /**
-     * 过滤字段：指定不需要序列化的字段
-     */
+    /** 过滤字段：指定不需要序列化的字段 */
     private transient Map<Class<?>, Set<String>> excludes;
 
     private R(IRespCode resultCode) {
@@ -87,6 +81,10 @@ public class R<T> implements Serializable {
         return !R.isSuccess(result);
     }
 
+    public static <T> R<T> ok() {
+        return new R<T>(RespCode.SUCCESS);
+    }
+
     public static <T> R<T> ok(T result) {
         return new R<T>(RespCode.SUCCESS, result);
     }
@@ -95,7 +93,7 @@ public class R<T> implements Serializable {
      * 返回R
      *
      * @param data 数据
-     * @param <T>  T 泛型标记
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> data(T data) {
@@ -106,8 +104,8 @@ public class R<T> implements Serializable {
      * 返回R
      *
      * @param data 数据
-     * @param msg  消息
-     * @param <T>  T 泛型标记
+     * @param msg 消息
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> data(T data, String msg) {
@@ -119,8 +117,8 @@ public class R<T> implements Serializable {
      *
      * @param code 状态码
      * @param data 数据
-     * @param msg  消息
-     * @param <T>  T 泛型标记
+     * @param msg 消息
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> data(int code, T data, String msg) {
@@ -142,7 +140,7 @@ public class R<T> implements Serializable {
      * 返回R
      *
      * @param resultCode 业务代码
-     * @param <T>        T 泛型标记
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> success(IRespCode resultCode) {
@@ -153,8 +151,8 @@ public class R<T> implements Serializable {
      * 返回R
      *
      * @param resultCode 业务代码
-     * @param msg        消息
-     * @param <T>        T 泛型标记
+     * @param msg 消息
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> success(IRespCode resultCode, String msg) {
@@ -176,8 +174,8 @@ public class R<T> implements Serializable {
      * 返回R
      *
      * @param code 状态码
-     * @param msg  消息
-     * @param <T>  T 泛型标记
+     * @param msg 消息
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> fail(int code, String msg) {
@@ -188,7 +186,7 @@ public class R<T> implements Serializable {
      * 返回R
      *
      * @param resultCode 业务代码
-     * @param <T>        T 泛型标记
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> fail(IRespCode resultCode) {
@@ -199,8 +197,8 @@ public class R<T> implements Serializable {
      * 返回R
      *
      * @param resultCode 业务代码
-     * @param msg        消息
-     * @param <T>        T 泛型标记
+     * @param msg 消息
+     * @param <T> T 泛型标记
      * @return R
      */
     public static <T> R<T> fail(IRespCode resultCode, String msg) {
@@ -219,7 +217,6 @@ public class R<T> implements Serializable {
                 : fail(AppConstant.DEFAULT_FAILURE_MESSAGE);
     }
 
-
     public R<T> putTimeStamp() {
         this.timestamp = System.currentTimeMillis();
         return this;
@@ -229,7 +226,6 @@ public class R<T> implements Serializable {
         this.total = total;
         return this;
     }
-
 
     public R<T> include(Class<?> type, String... fields) {
         return include(type, Arrays.asList(fields));

@@ -10,9 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
-/**
- * api 签名自动配置
- */
+/** api 签名自动配置 */
 @Configuration(proxyBeanMethods = false)
 @RequiredArgsConstructor
 @EnableConfigurationProperties(ApiCryptoProperties.class)

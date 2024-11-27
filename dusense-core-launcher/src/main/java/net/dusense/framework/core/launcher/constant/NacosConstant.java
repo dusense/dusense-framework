@@ -1,48 +1,30 @@
 package net.dusense.framework.core.launcher.constant;
 
-/**
- * Nacos常量.
- */
+/** Nacos常量. */
 public interface NacosConstant {
 
-    /**
-     * nacos 地址
-     */
+    /** nacos 地址 */
     String NACOS_ADDR = "127.0.0.1:8848";
 
-    /**
-     * nacos 配置前缀
-     */
+    /** nacos 配置前缀 */
     String NACOS_CONFIG_PREFIX = "dusense";
 
-    /**
-     * nacos 组配置后缀
-     */
+    /** nacos 组配置后缀 */
     String NACOS_GROUP_SUFFIX = "-group";
 
-    /**
-     * nacos 配置文件类型
-     */
+    /** nacos 配置文件类型 */
     String NACOS_CONFIG_FORMAT = "yaml";
 
-    /**
-     * nacos json配置文件类型
-     */
+    /** nacos json配置文件类型 */
     String NACOS_CONFIG_JSON_FORMAT = "json";
 
-    /**
-     * nacos 是否刷新
-     */
+    /** nacos 是否刷新 */
     String NACOS_CONFIG_REFRESH = "true";
 
-    /**
-     * nacos 分组
-     */
+    /** nacos 分组 */
     String NACOS_CONFIG_GROUP = "DEFAULT_GROUP";
 
-    /**
-     * seata 分组
-     */
+    /** seata 分组 */
     String NACOS_SEATA_GROUP = "SEATA_GROUP";
 
     /**
@@ -71,7 +53,7 @@ public interface NacosConstant {
      *
      * @param appName 服务名
      * @param profile 环境变量
-     * @param format  文件类型
+     * @param format 文件类型
      * @return dataId
      */
     static String dataId(String appName, String profile, String format) {

@@ -3,10 +3,7 @@ package net.dusense.framework.extension.datapermit.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-/**
- * 数据权限类型
- *
- */
+/** 数据权限类型 */
 @Getter
 @AllArgsConstructor
 public enum DataScopeEnum {

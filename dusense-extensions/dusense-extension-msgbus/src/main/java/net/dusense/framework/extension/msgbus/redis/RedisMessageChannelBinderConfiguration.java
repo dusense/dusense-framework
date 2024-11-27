@@ -8,9 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 
-/**
- * @author David Turanski
- */
 @Configuration
 @Import({PropertyPlaceholderAutoConfiguration.class})
 @ConfigurationProperties(prefix = "spring.cloud.stream.redis.binder")
@@ -21,8 +18,7 @@ public class RedisMessageChannelBinderConfiguration {
     //	@Autowired
     //	private Codec codec;
 
-    @Autowired
-    private RedisConnectionFactory redisConnectionFactory;
+    @Autowired private RedisConnectionFactory redisConnectionFactory;
 
     @Bean
     public RedisMessageChannelBinder redisMessageChannelBinder() {

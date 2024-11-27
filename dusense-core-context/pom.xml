@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dusense-core-context</artifactId>
-    <name>${project.artifactId}</name>
+    <name>${project.artifactId} ${project.version}</name>
 <!--    <version>${project.parent.version}</version>-->
     <packaging>jar</packaging>
 

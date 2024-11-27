@@ -1,9 +1,7 @@
 package net.dusense.framework.core.cloud.constants;
 
-
 /**
- *
- * <p>应用系统常量</p>
+ * 应用系统常量
  *
  * @author [ saily ]
  * @email sailyfirm@gmail.com

@@ -28,7 +28,7 @@ where scope.create_dept in (${deptId}) and category = 5
 
 page:/*#view@groupowner
 page:/?category=5#view@groupowner
-
+       
 videos:cat.mp4#view@(groups:admin#member)
 
 

@@ -12,8 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import static io.undertow.UndertowOptions.ENABLE_HTTP2;
 
 /**
- *
- * <p>Undertow http2 h2c 配置，对 servlet 开启</p>
+ * Undertow http2 h2c 配置，对 servlet 开启
  *
  * @author [ saily ]
  * @email sailyfirm@gmail.com

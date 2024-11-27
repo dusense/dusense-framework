@@ -10,8 +10,8 @@
 
     <groupId>net.dusense.framework</groupId>
     <artifactId>dusense-boot-single</artifactId>
-    <packaging>pom</packaging>
-    <name>${project.artifactId}</name>
+    <packaging>jar</packaging>
+    <name>${project.artifactId} ${project.version}</name>
 
     <dependencies>
         <dependency>

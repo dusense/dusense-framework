@@ -16,21 +16,20 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * 组合 spring cglib Converter 和 spring ConversionService
- */
+/** 组合 spring cglib Converter 和 spring ConversionService */
 @Slf4j
 @AllArgsConstructor
 public class DusenseConverter implements Converter {
-    private static final ConcurrentMap<String, TypeDescriptor> TYPE_CACHE = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<String, TypeDescriptor> TYPE_CACHE =
+            new ConcurrentHashMap<>();
     private final Class<?> sourceClazz;
     private final Class<?> targetClazz;
 
     /**
      * cglib convert
      *
-     * @param value     源对象属性
-     * @param target    目标对象属性类
+     * @param value 源对象属性
+     * @param target 目标对象属性类
      * @param fieldName 目标的field名，原为 set 方法名，DusenseBeanCopier 里做了更改
      * @return {Object}
      */

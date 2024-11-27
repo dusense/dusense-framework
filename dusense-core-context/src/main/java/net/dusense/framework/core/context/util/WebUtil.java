@@ -118,7 +118,7 @@ public class WebUtil extends org.springframework.web.util.WebUtils {
             HttpServletResponse response, int responseStatus, String message) {
         R respmessage = new R();
         respmessage.putTimeStamp();
-        respmessage.setMessage(message);
+        respmessage.setMsg(message);
         respmessage.setStatus(responseStatus);
         renderJson(response, responseStatus, respmessage);
     }
