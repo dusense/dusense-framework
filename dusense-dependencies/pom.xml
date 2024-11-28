@@ -125,7 +125,7 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
-
+            
             <!--可traceId-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
