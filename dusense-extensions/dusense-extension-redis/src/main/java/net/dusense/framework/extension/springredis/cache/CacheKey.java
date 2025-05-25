@@ -35,6 +35,7 @@ import java.time.Duration;
 public class CacheKey {
     /** redis key */
     private final String key;
+
     /** 超时时间 秒 */
     @Nullable private Duration expire;
 

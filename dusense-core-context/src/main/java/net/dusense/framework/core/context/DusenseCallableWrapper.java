@@ -11,6 +11,7 @@ import java.util.concurrent.Callable;
 public class DusenseCallableWrapper<V> implements Callable<V> {
     private final Callable<V> delegate;
     private final Map<String, Object> tlMap;
+
     /** logback 下有可能为 null */
     @Nullable private final Map<String, String> mdcMap;
 

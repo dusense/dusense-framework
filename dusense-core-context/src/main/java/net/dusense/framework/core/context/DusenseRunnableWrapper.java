@@ -10,6 +10,7 @@ import java.util.Map;
 public class DusenseRunnableWrapper implements Runnable {
     private final Runnable delegate;
     private final Map<String, Object> tlMap;
+
     /** logback 下有可能为 null */
     @Nullable private final Map<String, String> mdcMap;
 

@@ -29,6 +29,7 @@ public class DusenseFeignSentinel {
     public static final class Builder extends Feign.Builder implements ApplicationContextAware {
         private Contract contract = new Contract.Default();
         private ApplicationContext applicationContext;
+
         //        private FeignContext feignContext;
 
         @Override

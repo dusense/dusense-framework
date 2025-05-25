@@ -18,6 +18,7 @@ public class Version {
 
     /** 版本号 */
     @Nullable private String version;
+
     /** 是否完整模式，默认使用完整模式 */
     private boolean complete = true;
 

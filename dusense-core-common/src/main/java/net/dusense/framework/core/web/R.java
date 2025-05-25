@@ -29,6 +29,7 @@ public class R<T> implements Serializable {
     protected int status;
     private long total;
     private long timestamp;
+
     /** 过滤字段：指定需要序列化的字段 */
     private transient Map<Class<?>, Set<String>> includes;
 

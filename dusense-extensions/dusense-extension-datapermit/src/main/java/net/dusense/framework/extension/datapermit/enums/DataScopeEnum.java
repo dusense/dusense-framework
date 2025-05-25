@@ -24,6 +24,7 @@ public enum DataScopeEnum {
 
     /** 类型 */
     private final int type;
+
     /** 描述 */
     private final String description;
 

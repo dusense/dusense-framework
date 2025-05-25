@@ -55,6 +55,7 @@ public enum RespCode implements IRespCode {
 
     /** code编码 */
     final int code;
+
     /** 中文信息描述 */
     final String message;
 }

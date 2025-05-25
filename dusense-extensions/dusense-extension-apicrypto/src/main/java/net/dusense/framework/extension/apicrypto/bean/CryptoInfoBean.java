@@ -11,6 +11,7 @@ public class CryptoInfoBean {
 
     /** 加密类型 */
     private final CryptoType type;
+
     /** 私钥 */
     private final String secretKey;
 }

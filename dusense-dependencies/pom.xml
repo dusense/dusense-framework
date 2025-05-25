@@ -45,15 +45,15 @@
     </developers>
 
     <properties>
-        <revision>4.2</revision>
-        <spring.boot.version>3.3.1</spring.boot.version>
-        <spring.cloud.version>2023.0.3</spring.cloud.version>
-        <alibaba.cloud.version>2023.0.1.2</alibaba.cloud.version>
+        <revision>5.0</revision>
+        <spring.boot.version>3.4.3</spring.boot.version>
+        <spring.cloud.version>2024.0.1</spring.cloud.version>
+        <alibaba.cloud.version>2023.0.3.2</alibaba.cloud.version>
 
-        <dusense.platform.version>4.0</dusense.platform.version>
+        <dusense.platform.version>5.0</dusense.platform.version>
         <docker.image.prefix>dusense</docker.image.prefix>
 
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- for maven compiler plugin -->
         <maven.plugin.version>3.11.0</maven.plugin.version>
@@ -65,15 +65,15 @@
         <swagger.models.version>1.6.2</swagger.models.version>
 
         <protostuff.version>1.6.0</protostuff.version>
-        <jackson.version>2.17.2</jackson.version>
+        <jackson.version>2.18.2</jackson.version>
         <druid.version>1.2.20</druid.version>
 
         <!-- security lib soon -->
-        <shiro.version>2.0.1</shiro.version>
+        <shiro.version>2.0.4</shiro.version>
         <!--Apache OLTU 实现了OAuth 2.0的规范 长期未更新-->
         <oltu.version>1.0.2</oltu.version>
 
-        <freemarker.version>2.3.32</freemarker.version>
+        <freemarker.version>2.3.34</freemarker.version>
 
         <!-- Test libs -->
         <junit.version>5.10.1</junit.version>
@@ -125,7 +125,7 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
-            
+
             <!--可traceId-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -167,7 +167,7 @@
             <dependency>
                 <groupId>net.dreamlu</groupId>
                 <artifactId>mica-auto</artifactId>
-                <version>3.1.3</version>
+                <version>3.1.4</version>
                 <scope>provided</scope>
             </dependency>
             <!--            <dependency>-->
@@ -196,13 +196,13 @@
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
-                <version>1.5.5.Final</version>
+                <version>1.6.3</version>
             </dependency>
 
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
-                <version>1.5.5.Final</version>
+                <version>1.6.3</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -321,12 +321,12 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>easyexcel</artifactId>
-                <version>4.0.2</version>
+                <version>4.0.3</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>33.2.1-jre</version>
+                <version>33.4.8-jre</version>
             </dependency>
 
             <!--核心框架的相关工程-->
@@ -491,7 +491,7 @@
                     <configuration>
                         <java>
                             <googleJavaFormat>
-                                <version>1.16.0</version>
+                                <version>1.17.0</version>
                                 <style>AOSP</style>
                             </googleJavaFormat>
                             <!-- \# refers to the static imports -->

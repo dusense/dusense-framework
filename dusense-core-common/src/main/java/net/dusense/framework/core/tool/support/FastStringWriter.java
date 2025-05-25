@@ -14,6 +14,7 @@ import java.util.Arrays;
 public class FastStringWriter extends Writer {
     /** The buffer where data is stored. */
     private char[] buf;
+
     /** The number of chars in the buffer. */
     private int count;
 

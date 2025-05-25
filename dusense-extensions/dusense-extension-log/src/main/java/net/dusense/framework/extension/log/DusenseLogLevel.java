@@ -76,6 +76,7 @@ public enum DusenseLogLevel {
 
     /** 请求日志配置前缀 */
     public static final String REQ_LOG_PROPS_PREFIX = "dusense.log.request";
+
     /** 控制台日志是否启用 */
     public static final String CONSOLE_LOG_ENABLED_PROP = "dusense.log.console.enabled";
 
